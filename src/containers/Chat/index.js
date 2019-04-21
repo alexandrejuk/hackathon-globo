@@ -25,7 +25,7 @@ class Chat extends Component {
         />
       </div>
       <div className="message-you">
-        {message.text}
+        <p>{message.text}</p>
       </div>
     </div>
   )
@@ -38,7 +38,7 @@ class Chat extends Component {
       </div>
       <div className="message">
         { message.url ? <img className="imageGif" src={message.url} alt="avatar"/> : null } 
-        { message.text }
+        <p>{ message.text }</p>
       </div>
     </div>
   )

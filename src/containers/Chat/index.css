@@ -24,6 +24,7 @@
   font-size: 1em;
   width: 65%;
   height: 40px;
+  z-index: 700;
 }
 .inputChat button {
   border: none;
@@ -83,7 +84,7 @@
   overflow-x: hidden;
   border-radius: 50%;
   right: -320px;
-  z-index: 999;
+  z-index: 600;
 }
 
 .profileImage {
@@ -94,7 +95,7 @@
   width: 40px;
   overflow-x: hidden;
   border-radius: 50%; 
-  z-index: 999;
+  z-index: 600;
 }
 .avatar {
   height: 40px;
@@ -102,5 +103,5 @@
 }
 
 .imageGif {
-  height: 200px;
+  width: 200px;
 }
