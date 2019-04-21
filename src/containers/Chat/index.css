@@ -47,6 +47,7 @@
   padding: 4px;
 }
 .message {
+  font-family: arial;
   padding: 14px;
   position: relative;
   bottom: -420px;
@@ -56,12 +57,39 @@
   width: 70%;
   left: 40px;
   color: #fff;
+  overflow-x: hidden;
+}
+
+.message-you {
+  font-family: arial;
+  padding: 14px;
+  position: relative;
+  bottom: -420px;
+  background: #e0e0e0;
+  border-radius: 10px 0 25px 10px;
+  margin-top: 5px;
+  width: 70%;
+  left: 40px;
+  color: #000;
+  overflow-x: hidden;
+}
+
+
+.profileImage-you {
+  position: relative;
+  bottom: -425px;
+  background: transparent;
+  height: 40px;
+  width: 40px;
+  overflow-x: hidden;
+  border-radius: 50%;
+  right: -320px;
 }
 
 .profileImage {
   position: relative;
   bottom: -430px;
-  background: red;
+  background: transparent;
   height: 40px;
   width: 40px;
   overflow-x: hidden;
@@ -70,4 +98,8 @@
 .avatar {
   height: 40px;
   width: 40px;
+}
+
+.imageGif {
+  height: 250px;
 }
