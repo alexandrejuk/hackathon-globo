@@ -1,15 +1,29 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "AppHackathon",
+  "short_name": "AppHackathon",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "./image/png/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "density": 1
+    },
+    {
+      "src": "./image/png/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "density": 2
+    },
+    {
+      "src": "./image/png/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "density": 3
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "portrait",
+  "background_color": "red",
+  "theme_color": "red"
 }
