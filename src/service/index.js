@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default class ServicesService {
-  url = 'http://localhost:3003/api';
+  url = 'https://hackathon-globo-back.herokuapp.com/api';
 
   getTeams = () => {
     return axios.get(`${this.url}/teams`)
