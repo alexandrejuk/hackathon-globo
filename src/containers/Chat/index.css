@@ -1,16 +1,12 @@
 .content {
   margin-top: 20px;
 }
-
 .card {
   margin: 25px 0;
   border: 2px solid #e0e0e0;
   width: 100%;
   height: 100px;
   border-radius: 4px;
-}
-.wrapper-chat {
-  height: 100vh;
 }
 .inputChat {
   border-top: 1px solid #c7c7c7;
@@ -27,12 +23,13 @@
   padding: 14px 5px;
   font-size: 1em;
   width: 65%;
+  height: 40px;
 }
 .inputChat button {
   border: none;
   border-top: 1px solid #c7c7c7;
   text-align: center;
-  color: #c4c4c4;
+  color: #333;
   font-size: 1em;
   background: #fff;
   font-weight: bold;
@@ -43,14 +40,15 @@
   color: #3b9c00;
 }
 .message-content {
-  height: 600%;
+  background: url(https://i.pinimg.com/originals/79/5c/ab/795cabc4647f73b365e2e6eabd0f34dc.png);
+  height: 100vh;
   padding: 4px;
 }
 .message {
   font-family: arial;
   padding: 14px;
   position: relative;
-  bottom: -420px;
+  bottom: -75px;
   background: #3b9c00;
   border-radius: 0px 10px 10px 25px;
   margin-top: 5px;
@@ -58,42 +56,45 @@
   left: 40px;
   color: #fff;
   overflow-x: hidden;
+  box-shadow: 2px 4px 23px -11px rgba(0,0,0,0.75);
 }
 
 .message-you {
   font-family: arial;
   padding: 14px;
   position: relative;
-  bottom: -420px;
-  background: #e0e0e0;
+  bottom: -75px;
+  background: #F2F2F2;
   border-radius: 10px 0 25px 10px;
   margin-top: 5px;
   width: 70%;
   left: 40px;
   color: #000;
   overflow-x: hidden;
+  box-shadow: 2px 4px 23px -11px rgba(0,0,0,0.75);
 }
-
 
 .profileImage-you {
   position: relative;
-  bottom: -425px;
+  bottom: -100px;
   background: transparent;
   height: 40px;
   width: 40px;
   overflow-x: hidden;
   border-radius: 50%;
   right: -320px;
+  z-index: 999;
 }
 
 .profileImage {
   position: relative;
-  bottom: -430px;
+  bottom: -100px;
   background: transparent;
   height: 40px;
   width: 40px;
   overflow-x: hidden;
   border-radius: 50%; 
+  z-index: 999;
 }
 .avatar {
   height: 40px;

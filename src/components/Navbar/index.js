@@ -1,8 +1,8 @@
 import React from 'react'
 import './index.css'
 
-const NavBar = ({ appName }) => (
-  <div className='navbar title'>
+const NavBar = ({ appName, fixed }) => (
+  <div className={fixed? 'navbar title fixed': 'navbar title'}>
     {appName}
   </div>
 )

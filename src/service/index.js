@@ -34,4 +34,8 @@ export default class ServicesService {
   getProfile = (id) => {
     return axios.get(`${this.url}/profiles/${id}`)
   }
+
+  getChat = () => {
+    return axios.get(`${this.url}/chat`)
+  }
 }
