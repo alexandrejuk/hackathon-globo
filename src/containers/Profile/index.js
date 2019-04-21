@@ -15,9 +15,9 @@ class Profile extends Component {
   }
   handleProfile = profile => {
     return (
-      <div className={profile.checked ? 'card card-profile checked' : 'card card-profile' }
+      <div className={this.props.profileSelectedId === profile.id ? 'card card-profile checked' : 'card card-profile' }
         key={profile.id} 
-        onClick={() => this.props.onClick('profile', profile)}
+        onClick={() => this.props.onClick('profile', profile.id)}
       >
         <img className="imageIcon" src={this.imagePath[profile.path]} alt={profile.title}/>
         <div className="card-info">

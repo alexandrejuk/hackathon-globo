@@ -9,16 +9,24 @@ class Setting extends Component {
   ]
 
   render() {
-    const { index, teams, onClick, profiles, theme } = this.props
+    const { 
+      index,
+      teams,
+      onClick,
+      profiles,
+      teamSelectedId,
+      profileSelectedId,
+    } = this.props
     const Content = this.content[index]
     return (
       <Fragment>
-        <Content 
-        teams={teams} 
-        profiles={profiles}
-        onClick={onClick}
-        theme={theme}
-      />
+        <Content
+          teamSelectedId={teamSelectedId}
+          profileSelectedId={profileSelectedId}
+          teams={teams} 
+          profiles={profiles}
+          onClick={onClick}
+        />
       </Fragment>
     )
   }

@@ -8,8 +8,8 @@ class TeamList extends Component {
         key={team.id} 
         src={team.icon} 
         alt={team.name} 
-        className={team.checked ? `iconTeam checked`: 'iconTeam'}
-        onClick={() => this.props.onClick('team', team)}
+        className={this.props.teamSelectedId === team.id ? `iconTeam checked`: 'iconTeam'}
+        onClick={() => this.props.onClick('team', team.id)}
       />
     )
   }

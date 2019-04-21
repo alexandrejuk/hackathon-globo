@@ -1,8 +1,8 @@
 import React from 'react'
 import './index.css'
 
-const NavBar = ({ appName, style }) => (
-  <div className={`navbar title ${style}`}>
+const NavBar = ({ appName }) => (
+  <div className='navbar title'>
     {appName}
   </div>
 )

@@ -3,104 +3,89 @@ import SettingContainer from '../../containers/Setting'
 import NavBar from '../../components/Navbar'
 import Button from '../../components/Button'
 import { Link } from 'react-router-dom'
-
-import {
-  atletico_mineiro,
-  botafogo,
-  chapecoense,
-  corinthians,
-  flamengo,
-  fluminense,
-  gremio,
-  internacional,
-  palmeiras,
-  paysandu,
-  santos,
-  sao_paulo,
-  vasco,
-} from '../../assets/teams'
+import ServicesServices from '../../service'
 
 class Setting extends Component {
+  servicesServices = null
   state = {
-    teams: [
-      { id: 1, name: 'Atletico Mineiro', icon: atletico_mineiro, checked: false },
-      { id: 2, name: 'Botafogo', icon: botafogo, checked: false },
-      { id: 3, name: 'Chapecoense', icon: chapecoense, checked: false },
-      { id: 4, name: 'Corinthians', icon: corinthians, checked: false },
-      { id: 5, name: 'Flamengo', icon: flamengo, checked: false },
-      { id: 6, name: 'Fluminense', icon: fluminense, checked: false },
-      { id: 7, name: 'Grêmio', icon: gremio, checked: false },
-      { id: 8, name: 'Internacional', icon: internacional, checked: false },
-      { id: 9, name: 'Palmeiras', icon: palmeiras, checked: false },
-      { id: 10, name: 'Paysandu', icon: paysandu, checked: false },
-      { id: 11, name: 'Santos', icon: santos, checked: false },
-      { id: 12, name: 'São Paulo', icon: sao_paulo, checked: false },
-      { id: 13, name: 'Vasco', icon: vasco, checked: false },
-    ],
-    profiles: [
-      { id: 1, title: 'Casual', subtitle: 'Um torcedor moderado?', path: 'casual', checked: false },
-      { id: 2, title: 'Corneteiro', subtitle: 'Um torcedor polêmico?', path: 'trompete', checked: false },
-      { id: 3, title: 'Fanático', subtitle: 'Obcecado pelo time do coração?', path: 'estadio', checked: false },
-    ],
+    teams:[],
+    profiles: [],
     index: 0,
-    teamSelected: '',
-    profileSelected: 'casual',
+    teamSelectedId: null,
+    profileSelectedId: null,
   }
   
-  handleSetProfile({ id }) {
-    const profiles = this.state.profiles.map(
-      t => t.id === id ? 
-        ({...t, checked: true }) : 
-        ({...t, checked: false })
-    )
-    this.setState({ profiles })
+  componentDidMount() {
+    this.servicesServices = new ServicesServices();
+    this.getProfiles();
+    this.getTeams();
   }
-  
-  handleSetTeam({ id }) {
-    const teams = this.state.teams.map(
-      t => t.id === id ? 
-        ({...t, checked: true }) : 
-        ({...t, checked: false })
-    )
-    this.setState({ 
-      teams,
+
+  getProfiles() {
+    this.servicesServices.getProfiles()
+      .then((response) => {
+        this.setState({ profiles: response.data.data });
+      })
+  }
+
+  getTeams() {
+    this.servicesServices.getTeams()
+    .then((response) => {
+      this.setState({ teams: response.data.data })
     })
   }
-  
-  handleSelected = (type, value) => {
-    switch(type) {
-      case 'profile':
-        return this.handleSetProfile(value)
+
+  handleSelected = (type, id) => {
+    switch (type) {
+      case 'team':
+        return this.setState({ teamSelectedId: id });
       default:
-        return this.handleSetTeam(value)
+        return this.setState({ profileSelectedId: id })
     }
   }
 
   handleNext = () => {
-    if(this.state.index < 1) {
+    const { 
+      profileSelectedId, 
+      teamSelectedId, 
+      index,
+    } = this.state;
+    if(teamSelectedId && index === 0) {
+      const index = this.state.index + 1;
+      this.setState({ index })
+    }
+
+    if(profileSelectedId && index === 1) {
       const index = this.state.index + 1;
       this.setState({ index })
     }
   }
 
   render() {
-    const { teams, index, profiles, theme } = this.state;
+    const { 
+      teamSelectedId,
+      profileSelectedId,
+      teams,
+      index,
+      profiles,
+    } = this.state;
     
     return (
       <div>
-        <NavBar appName="Amigo" theme={theme}/>
+        <NavBar appName="Cavalinho Virtual"/>
         <SettingContainer 
           index={index} 
           teams={teams}
+          teamSelectedId={teamSelectedId}
+          profileSelectedId={profileSelectedId}
           profiles={profiles}
           onClick={this.handleSelected}
-          theme={theme}
         />
         {
           this.state.index < 1 ?
-          <Button onClick={this.handleNext} theme={theme}> Próximo</Button> :
+          <Button onClick={this.handleNext}> Próximo</Button> :
           <Link to='/chat' params={{ testvalue: "hello" }}>
-            <Button theme={theme} onClick={() => ''}> Concluir</Button>
+            <Button onClick={() => ''}> Concluir</Button>
           </Link>
         }
       </div>
