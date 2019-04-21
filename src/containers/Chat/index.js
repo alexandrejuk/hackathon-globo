@@ -37,7 +37,7 @@ class Chat extends Component {
         <img className="avatar" src={iconGlobo} alt="avatar"/>
       </div>
       <div className="message">
-        { message.url ? <img className="avatar" src={iconGlobo} alt="avatar"/> : null } 
+        { message.url ? <img className="imageGif" src={message.url} alt="avatar"/> : null } 
         { message.text }
       </div>
     </div>

@@ -41,7 +41,7 @@
 }
 .message-content {
   background: url(https://i.pinimg.com/originals/79/5c/ab/795cabc4647f73b365e2e6eabd0f34dc.png);
-  height: 100vh;
+  height: 1000vh;
   padding: 4px;
 }
 .message {
@@ -52,7 +52,7 @@
   background: #3b9c00;
   border-radius: 0px 10px 10px 25px;
   margin-top: 5px;
-  width: 70%;
+  width: 75%;
   left: 40px;
   color: #fff;
   overflow-x: hidden;
@@ -67,7 +67,7 @@
   background: #F2F2F2;
   border-radius: 10px 0 25px 10px;
   margin-top: 5px;
-  width: 70%;
+  width: 75%;
   left: 40px;
   color: #000;
   overflow-x: hidden;
@@ -102,5 +102,5 @@
 }
 
 .imageGif {
-  height: 250px;
+  height: 200px;
 }

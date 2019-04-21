@@ -11,14 +11,6 @@ export default class ServicesService {
     return axios.get(`${this.url}/teams/${id}`)
   }
 
-  getBrands = () => {
-    return axios.get(`${this.url}/brands`)
-  }
-
-  getBrand = (id) => {
-    return axios.get(`${this.url}/brands/${id}`)
-  }
-
   getMemes = () => {
     return axios.get(`${this.url}/memes`)
   }
